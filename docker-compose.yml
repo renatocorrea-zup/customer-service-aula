@@ -1,0 +1,17 @@
+version: '3'
+networks:
+  db:
+  cache:
+services:
+  postgres:
+    container_name: curso-java-2
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=curso_java
+      - POSTGRES_USER=justino
+      - POSTGRES_PASSWORD=motoboy
+      - MAX_CONNECTIONS=300
+    networks:
+      - db
